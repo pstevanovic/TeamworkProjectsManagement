@@ -58,6 +58,9 @@ public class DataManager {
         return sInstance;
     }
 
+    /**
+     * Fetch list of project for user and return data to a FetchProjectsCallback
+      */
     public void fetchProjects(final FetchProjectsCallback callback) {
         mProjectsService.getProjects().enqueue(new Callback<ProjectsListResponse>() {
             @Override
@@ -75,6 +78,9 @@ public class DataManager {
         });
     }
 
+    /**
+     * Fetch project details for the given project id and return data to a FetchProjectDetailsCallback
+     */
     public void fetchProjectDetails(int id, final FetchProjectDetailsCallback callback) {
         mProjectsService.getProject(id).enqueue(new Callback<ProjectDetailsResponse>() {
             @Override
